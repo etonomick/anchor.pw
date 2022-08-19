@@ -1,0 +1,39 @@
+{
+  "name": "anchor.pw",
+  "version": "1.0.0",
+  "description": "Landing page generator",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test:e2e": "playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etonomick/anchor.pw.git"
+  },
+  "keywords": [
+    "social",
+    "landing",
+    "page",
+    "generator"
+  ],
+  "author": "Valery Stepanov <etonomick@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/etonomick/anchor.pw/issues"
+  },
+  "homepage": "https://github.com/etonomick/anchor.pw#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.0-rc.3",
+    "autoprefixer": "^10.4.8",
+    "next": "^12.2.5",
+    "postcss": "^8.4.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.1.8"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.25.0"
+  }
+}
