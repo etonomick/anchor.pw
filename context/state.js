@@ -6,6 +6,7 @@ const Context = createContext()
 export function Wrapper({ children }) {
 
     const [session, setSession] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     async function updateSession() {
         const { data: { session }, error } = await supabase.auth.getSession()
@@ -13,13 +14,21 @@ export function Wrapper({ children }) {
     }
 
     useEffect(() => {
-        supabase.auth.onAuthStateChange((_, session) => setSession(session))
+        supabase.auth.onAuthStateChange((_, session) => {
+            setLoading(true)
+            setSession(session)
+        })
     }, [])
+
+    useEffect(() => {
+        setLoading(false)
+    }, [session])
 
     updateSession()
 
     return <Context.Provider value={{
-        session
+        session,
+        loading
     }}>{children}</Context.Provider>
 
 }
